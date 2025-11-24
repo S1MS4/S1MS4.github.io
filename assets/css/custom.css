@@ -1,0 +1,417 @@
+/* Custom styles with Dark Autumn Theme */
+
+/* Typography Styles */
+
+/* Body font-family */
+body {
+  font-family: 'Lato', sans-serif;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+}
+
+h1 {
+  font-size: 3rem;
+  color: #daa520 !important; /* Dark Golden Rod */
+  font-weight: bold;
+  line-height: 1.2;
+  letter-spacing: 0.1em;
+}
+
+h2 {
+  font-size: 2.5rem;
+  color: #daa520 !important; /* Dark Golden Rod */
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: 0.05em;
+}
+
+h3 {
+  font-size: 2rem;
+  color: #daa520 !important; /* Dark Golden Rod */
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: 0.02em;
+}
+
+h4 {
+  font-size: 1.75rem;
+  color: #8b4513 !important; /* Saddle Brown */
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+}
+
+h5 {
+  font-size: 1.5rem;
+  color: #8b4513 !important; /* Saddle Brown */
+  font-weight: 300;
+  line-height: 1.6;
+  letter-spacing: 0;
+}
+
+h6 {
+  font-size: 1.25rem;
+  color: #daa520 !important; /* Dark Golden Rod */
+  font-weight: 200;
+  line-height: 1.7;
+  letter-spacing: -0.01em;
+}
+
+/* Paragraphs */
+p {
+  font-family: 'Arial', sans-serif;
+  color: var(--default-color); /* Default color for better contrast */
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Button Styles - Dark Autumn Theme */
+.btn {
+  background: linear-gradient(135deg, #daa520, #8b4513); /* Dark Golden Rod to Saddle Brown gradient */
+  color: var(--default-color) !important;
+  border: 2px solid #daa520;
+  border-radius: 25px;
+  padding: 12px 24px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(218, 165, 32, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.btn:hover {
+  background: linear-gradient(135deg, #8b4513, #daa520); /* Saddle Brown to Dark Golden Rod on hover */
+  border-color: #8b4513;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(218, 165, 32, 0.5);
+}
+
+.btn:hover::before {
+  left: 100%;
+}
+
+.btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 10px rgba(218, 165, 32, 0.4);
+}
+
+.btn.btn-primary {
+  background: linear-gradient(135deg, #daa520, #b8860b); /* Golden Rod to Dark Golden Rod */
+  border-color: #daa520;
+  box-shadow: 0 4px 15px rgba(218, 165, 32, 0.3);
+}
+
+.btn.btn-primary:hover {
+  background: linear-gradient(135deg, #b8860b, #daa520);
+  border-color: #b8860b;
+  box-shadow: 0 8px 25px rgba(218, 165, 32, 0.5);
+}
+
+.btn.btn-outline {
+  background: transparent;
+  color: #daa520 !important;
+  border-color: #daa520;
+  box-shadow: none;
+}
+
+.btn.btn-outline:hover {
+  background: linear-gradient(135deg, #daa520, #8b4513);
+  color: var(--default-color) !important;
+  border-color: #daa520;
+  box-shadow: 0 4px 15px rgba(218, 165, 32, 0.3);
+}
+
+/* Link Styles - Autumn Theme */
+a {
+  color: #8b4513 !important; /* Saddle Brown */
+  text-decoration: none;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #daa520, #cd853f); /* Golden Rod to Peru */
+  transition: width 0.3s ease;
+}
+
+a:hover {
+  color: #a0522d !important; /* Sienna */
+  text-decoration: none;
+}
+
+a:hover::after {
+  width: 100%;
+}
+
+a:active {
+  color: #654321 !important; /* Dark Brown */
+  transform: scale(0.98);
+}
+
+/* Specific link overrides for different contexts */
+.navmenu a,
+.navmenu a:focus {
+  color: var(--default-color) !important; /* Default color for better contrast on dark background */
+}
+
+.navmenu a:hover,
+.navmenu .active,
+.navmenu .active:focus {
+  color: #daa520 !important; /* Golden for hover/active state */
+}
+
+/* Navigation icons */
+.navicon {
+  color: var(--default-color) !important; /* Default color icons */
+}
+
+.navmenu a:hover .navicon,
+.navmenu .active .navicon,
+.navmenu .active:focus .navicon {
+  color: #daa520 !important; /* Golden icons on hover/active */
+}
+
+/* Remove bulleting from navmenu */
+.navmenu ul li::before {
+  content: none;
+}
+
+.navmenu ul li {
+  padding-left: 0;
+}
+
+.footer a {
+  color: #8b4513 !important;
+}
+
+.footer a:hover {
+  color: #a0522d !important;
+}
+
+.social-links a {
+  background: linear-gradient(135deg, #daa520, #cd853f);
+  border: 2px solid #daa520;
+}
+
+.social-links a:hover {
+  background: linear-gradient(135deg, #cd853f, #a0522d);
+  border-color: #cd853f;
+  transform: rotate(360deg);
+  transition: transform 0.6s ease;
+}
+
+/* About section description - match hero description color */
+.about .about-content .description p {
+  color: color-mix(in srgb, var(--default-color), transparent 20%) !important;
+}
+
+/* Contact links in about section - improve contrast */
+.about .contact-links .contact-item {
+  color: var(--default-color) !important; /* Default color for better readability */
+}
+
+.about .contact-links .contact-item:hover {
+  color: #daa520 !important; /* Golden on hover */
+}
+
+/* About section uniform spacing and enhanced appearance */
+.about .profile-card {
+  margin-bottom: 2rem;
+  padding: 2rem;
+  border: 1px solid color-mix(in srgb, var(--accent-color), transparent 80%);
+  border-radius: 1rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.about .about-content {
+  padding-left: 2rem;
+  margin-top: 2rem;
+}
+
+.about .stats-grid {
+  margin-bottom: 2rem;
+  padding: 2rem;
+  border: 1px solid color-mix(in srgb, var(--accent-color), transparent 80%);
+  border-radius: 1rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.about .details-grid {
+  margin-bottom: 2rem;
+  padding: 2rem;
+  border: 1px solid color-mix(in srgb, var(--accent-color), transparent 80%);
+  border-radius: 1rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.about .cta-section {
+  margin-top: 2rem;
+}
+
+/* Resume section uniform spacing and enhanced appearance */
+.resume .resume-side {
+  margin-bottom: 2rem;
+  padding: 2rem;
+  border: 1px solid var(--heading-color);
+  border-radius: 1rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.resume .resume-section {
+  margin-bottom: 2rem;
+  padding: 2rem;
+  background-color: var(--surface-color);
+  border: 1px solid var(--heading-color);
+  border-radius: 1rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.resume .resume-item {
+  margin-bottom: 1.5rem;
+  padding: 1.5rem;
+  background-color: color-mix(in srgb, var(--surface-color), white 10%);
+  border: 1px solid var(--heading-color);
+  border-radius: 0.75rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Portfolio section uniform spacing and enhanced appearance */
+.portfolio .portfolio-wrap {
+  margin-bottom: 1.5rem;
+  padding: 0.5rem;
+  border: 1px solid color-mix(in srgb, var(--accent-color), transparent 80%);
+  border-radius: 1rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.portfolio .portfolio-info {
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+}
+
+/* List Styles with Pseudo-elements and Counters */
+
+/* Unordered List Styles */
+ul {
+  list-style: none; /* Remove default bullets */
+  padding-left: 0;
+}
+
+ul li {
+  position: relative;
+  padding-left: 25px; /* Space for custom bullet */
+  margin-bottom: 10px;
+}
+
+ul li::before {
+  content: "▶"; /* Custom bullet using pseudo-element */
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #daa520; /* Dark Golden Rod */
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+/* Nested unordered lists */
+ul ul li {
+  padding-left: 35px; /* Indent nested items */
+}
+
+ul ul li::before {
+  content: "▸"; /* Different bullet for nested items */
+  color: #8b4513; /* Saddle Brown */
+  font-size: 10px;
+}
+
+/* Ordered List Styles with Counters */
+ol {
+  counter-reset: custom-counter; /* Initialize counter */
+  list-style: none; /* Remove default numbering */
+  padding-left: 0;
+}
+
+ol li {
+  position: relative;
+  padding-left: 35px; /* Space for custom number */
+  margin-bottom: 10px;
+  counter-increment: custom-counter; /* Increment counter */
+}
+
+ol li::before {
+  content: counter(custom-counter) ". "; /* Custom numbering using counter */
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #daa520; /* Dark Golden Rod */
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* Nested ordered lists */
+ol ol {
+  counter-reset: nested-counter; /* Reset counter for nested lists */
+}
+
+ol ol li {
+  counter-increment: nested-counter;
+}
+
+ol ol li::before {
+  content: counter(custom-counter) "." counter(nested-counter) ". "; /* Nested numbering */
+  color: #daa520; /* Changed Saddle Brown to Dark Golden Rod (gold) */
+  font-size: 12px;
+}
+
+/* Services Table Styles */
+.services-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 16px;
+  text-align: center;
+}
+
+.services-table th {
+  background-color: #daa520;
+  color: #333;
+  padding: 12px;
+  border: 1px solid #ddd;
+  font-weight: bold;
+}
+
+.services-table td {
+  padding: 12px;
+  border: 1px solid #ddd;
+}
+
+.services-table tbody tr:nth-child(even) {
+  background-color: #8b5e3c;
+}
+
+.services-table tbody tr:hover {
+  background-color: #5a3e23;
+}
