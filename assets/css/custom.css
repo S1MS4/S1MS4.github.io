@@ -1,3 +1,91 @@
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+section {
+  opacity: 0;
+  animation: fadeIn 7s ease forwards;
+}
+
+/* Pulse and rotate animation for social icons */
+@keyframes pulseRotate {
+  0%, 100% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(10deg) scale(1.1);
+  }
+}
+
+.social-links a {
+  animation: pulseRotate 4s ease-in-out infinite;
+  display: inline-block;
+  transition: transform 0.6s ease;
+}
+
+/* Fix for services table to display correctly */
+.services-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.services-table thead th {
+  background-color: #daa520;
+  color: #fff;
+  padding: 10px;
+  text-align: left;
+  border-bottom: 2px solid #8b4513;
+}
+
+.services-table tbody td {
+  border-bottom: 1px solid #ddd;
+  padding: 10px;
+  vertical-align: top;
+}
+
+/* Preloader styles and animation */
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+#preloader::before {
+  content: "";
+  box-sizing: border-box;
+  width: 60px;
+  height: 60px;
+  border: 6px solid #daa520;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+/* Spinner rotation animation */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 /* Custom styles with Dark Autumn Theme */
 
 /* Typography Styles */
@@ -38,7 +126,7 @@ h3 {
 
 h4 {
   font-size: 1.75rem;
-  color: #8b4513 !important; /* Saddle Brown */
+  color: #ffc107 !important; /* Saddle Brown */
   font-weight: 400;
   line-height: 1.5;
   letter-spacing: 0.01em;
@@ -414,4 +502,117 @@ ol ol li::before {
 
 .services-table tbody tr:hover {
   background-color: #5a3e23;
+}
+
+/* Accessibility: Disable or simplify animations for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  section {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .social-links a {
+    animation: none !important;
+    transform: none !important;
+  }
+  #preloader::before {
+    animation: none !important;
+  }
+}
+
+@keyframes animatedGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+#services {
+  background: linear-gradient(-45deg, #8B4513, #DAA520, #3f94cd, #b80b0b);
+  background-size: 400% 400%;
+  background-position: 0% 50%;
+  animation: animatedGradient 12s ease infinite;
+  position: relative;
+  z-index: 1;
+}
+
+/* Shapes container for About section */
+.about-shapes {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  margin-top: 2rem;
+  pointer-events: none;
+  overflow: visible;
+}
+
+/* Shape base styles */
+.shape {
+  position: absolute;
+  opacity: 0.7;
+  mix-blend-mode: screen;
+}
+
+/* Circle shape */
+.shape.circle {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #ff6a00, #ee0979);
+  animation: floating 6s ease-in-out infinite;
+}
+
+/* Triangle shape using CSS clip-path */
+.shape.triangle {
+  width: 60px;
+  height: 52px;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  background: rgba(238, 9, 121, 0.7);
+  animation: rotating 8s linear infinite;
+  top: 60px;
+}
+
+/* Square shape */
+.shape.square {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(45deg, #ff6a00, #ee0979);
+  animation: scaling 7s ease-in-out infinite alternate;
+  top: 120px;
+  border-radius: 10px;
+}
+
+/* Floating animation */
+@keyframes floating {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+/* Rotating animation */
+@keyframes rotating {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Scaling animation */
+@keyframes scaling {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.3);
+  }
 }
